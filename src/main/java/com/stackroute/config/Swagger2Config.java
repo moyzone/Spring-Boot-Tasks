@@ -23,13 +23,15 @@ public class Swagger2Config {
                 .build().apiInfo(apiEndPointsInfo());
     }
 
+
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("Spring Boot REST API")
                 .description("Muzix REST API")
-                .contact(new Contact("Sourav Das", "www.github.com/", "moyzone108@gmail.com"))
+                .contact(new Contact("Sourav Das", "www.github.com/moyzone", "moyzone108@gmail.com"))
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .version("1.0.0")
                 .build();
     }
+
 }

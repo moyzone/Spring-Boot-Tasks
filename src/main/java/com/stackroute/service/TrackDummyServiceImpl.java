@@ -12,10 +12,6 @@ import java.util.List;
 @Service
 @Profile("dummy")
 public class TrackDummyServiceImpl implements TrackService {
-    @Override
-    public List<Track> searchTrack(String trackName) throws ParseException {
-        return null;
-    }
 
     @Override
     public List<Track> getAllTracks() {

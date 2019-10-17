@@ -26,4 +26,16 @@ public class Track {
     @JsonProperty("artist")
     private String artist;
     private String trackComments;
+
+
+    public Object getTrackComments() {
+        return trackComments;
+    }
+
+    public void setTrackComments(Object trackComments) {
+    }
+
+    public Integer getTrackId() {
+        return trackId;
+    }
 }

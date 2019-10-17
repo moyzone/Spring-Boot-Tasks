@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.List;
 
 public interface TrackService {
-    public List<Track> searchTrack(String trackName) throws ParseException;
 
     public List<Track> getAllTracks();
 

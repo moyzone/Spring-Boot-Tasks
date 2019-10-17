@@ -24,16 +24,6 @@ public class TrackController {
         this.trackService = trackService;
     }
 
-    @ApiOperation(value ="Search for tracks using Last.fm API", response = ResponseEntity.class)
-    @GetMapping("search")
-    public ResponseEntity<?> getSearchResults(@RequestParam("trackName") String trackName){
-        try {
-            responseEntity = new ResponseEntity<List<Track>>(trackService.searchTrack(trackName), HttpStatus.OK);
-        }catch (Exception e){
-            responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.CONFLICT);
-        }
-        return responseEntity;
-    }
 
     @ApiOperation(value = "Save a track to database", response = ResponseEntity.class)
     @PostMapping("track")

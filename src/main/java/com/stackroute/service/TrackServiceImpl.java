@@ -40,25 +40,6 @@ public class TrackServiceImpl implements TrackService{
         this.trackRepository = trackRepository;
     }
 
-    @Override
-    public List<Track> searchTrack(String trackName) throws ParseException {
-        final String uri=environment.getProperty("lastfm.prefix") + trackName + "&api_key=" + apiKey + urlSuffix;
-        RestTemplate restTemplate = new RestTemplate();
-        String result = restTemplate.getForObject(uri, String.class);
-        //Process JSON
-        JSONParser jsonParser = new JSONParser();
-        JSONObject jsonObject = (JSONObject)jsonParser.parse(result);
-        JSONObject results = (JSONObject)jsonParser.parse(jsonObject.get("results").toString());
-        JSONObject trackMatches = (JSONObject)results.get("trackmatches");
-        JSONArray tracks = (JSONArray) trackMatches.get("track");
-
-        List<Track> trackList = new ArrayList<Track>();
-        for(int i = 0; i < tracks.size(); i++){
-            JSONObject currentTrack = (JSONObject)tracks.get(i);
-            trackList.add(new Track(i, (String)currentTrack.get("name"), (String)currentTrack.get("artist"), ""));
-        }
-        return trackList;
-    }
 
     @Override
     public List<Track> getAllTracks() {

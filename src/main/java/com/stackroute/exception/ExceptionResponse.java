@@ -12,4 +12,13 @@ import lombok.NoArgsConstructor;
 public class ExceptionResponse {
     private String errorMessage;
     private String requestedURI;
+
+    public void setErrorMessage(String message) {
+        this.errorMessage=message;
+    }
+
+    public void setRequestedURI(String requestURI) {
+        this.requestedURI=requestURI;
+
+    }
 }
